@@ -1,0 +1,28 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    # Copy React app files to Node.js project directory
+    ls -la /home/einfochips/mypipe/_work/6/s/* .
+    cp -r /home/einfochips/mypipe/_work/6/s/* .
+    
+    # Install Node.js and React dependencies
+    npm install
+    
+    # Build React app
+    npm run build
+  displayName: 'Copy React app, npm install, and build'
