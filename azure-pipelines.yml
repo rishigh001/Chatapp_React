@@ -21,7 +21,7 @@ steps:
 
 - script: |
     # Copy React app files to Node.js project directory
-    cp -r /home/einfochips/mypipe/_work/6/react_app/* .
+    cp -r /home/einfochips/mypipe/_work/6/s/* .
     
     # Install Node.js and React dependencies
     npm install
