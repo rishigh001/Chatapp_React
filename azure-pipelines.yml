@@ -27,7 +27,7 @@ steps:
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: '**/*.npmrc'
-    TargetFolder: '$(Build.ArtifactStagingDirectory'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
     
 - task: PublishBuildArtifacts@1
   inputs:
@@ -35,8 +35,8 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-# - script: 
-#     cp -r /home/einfochips/mypipe/_work/10/s/package.json .
+- script: 
+    cp -r /home/einfochips/mypipe/_work/10/s/* .
 
 # - script: |
 #     npm install
