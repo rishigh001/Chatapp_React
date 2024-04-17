@@ -40,6 +40,11 @@ steps:
     publishRegistry: 'useFeed'
     publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/b8034dc1-9ef8-4989-9318-a76be9ab0e14'
 
+- script: |
+    npm version patch
+    npm publish --registry https://pkgs.dev.azure.com/BhavikChhabria/Azure-devops/_packaging/npmseed/npm/registry/
+  displayName: 'Publish NPM package'
+
 # - script: 
 #     ls -la /home/einfochips/mypipe/_work/10/s/* .
 #     cp -r /home/einfochips/mypipe/_work/10/s/* .
