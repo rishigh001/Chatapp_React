@@ -33,6 +33,7 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
     MaxArtifactSize: 1
+    StoreAsTar: true
 - task: Npm@1
   inputs:
     command: 'install'
