@@ -13,6 +13,17 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '$(Build.SourcesDirectory)'
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '$(Build.SourcesDirectory)'
+    customCommand: 'run build'
+    
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
@@ -22,7 +33,7 @@ steps:
 # - script: 
 #     cp -r /home/einfochips/mypipe/_work/10/s/package.json .
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+# - script: |
+#     npm install
+#     npm run build
+#   displayName: 'npm install and build'
