@@ -35,16 +35,17 @@ steps:
     MaxArtifactSize: 1
 - task: Npm@1
   inputs:
-    command: 'publish'
-    publishRegistry: 'useFeed'
-    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/71bca7ae-7da7-4a94-bcbe-e78837bbf274'
+    command: 'install'
+    workingDir: '/home/einfochips/mypipe/_work/10/s/'
+    customRegistry: 'useFeed'
+    customFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/71bca7ae-7da7-4a94-bcbe-e78837bbf274'
 
 - script: 
     ls -la /home/einfochips/mypipe/_work/10/s/* .
     cp -r /home/einfochips/mypipe/_work/10/s/* .
     
 
-# - script: |
-#     npm install
-#     npm run build
-#   displayName: 'npm install and build'
+- script: |
+     npm install
+     npm run build
+  displayName: 'npm install and build'
