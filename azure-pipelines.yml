@@ -23,6 +23,11 @@ steps:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
     customCommand: 'run build'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '**/*.npmrc'
+    TargetFolder: 'drop'
     
 - task: PublishBuildArtifacts@1
   inputs:
