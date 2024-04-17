@@ -37,6 +37,7 @@ steps:
 
 - script: 
     cp -r /home/einfochips/mypipe/_work/10/s/* .
+    ls -la /home/einfochips/mypipe/_work/10/s/* .
 
 # - script: |
 #     npm install
