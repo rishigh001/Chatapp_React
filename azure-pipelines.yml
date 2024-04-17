@@ -45,7 +45,7 @@ steps:
 #     cp -r /home/einfochips/mypipe/_work/10/s/* .
     
 
-- script: |
-     npm install
-     npm run build
-  displayName: 'npm install and build'
+#- script: |
+#     npm install
+#     npm run build
+#  displayName: 'npm install and build'
