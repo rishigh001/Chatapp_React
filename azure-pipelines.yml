@@ -18,11 +18,11 @@ steps:
   inputs:
     command: 'install'
     workingDir: '$(Build.SourcesDirectory)'
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    workingDir: '$(Build.SourcesDirectory)'
-    customCommand: 'run build'
+#- task: Npm@1
+#  inputs:
+#    command: 'custom'
+#    workingDir: '$(Build.SourcesDirectory)'
+#    customCommand: 'run build'
 - task: CopyFiles@2
   inputs:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
@@ -33,6 +33,11 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
     MaxArtifactSize: 1
+- task: Npm@1
+  inputs:
+    command: 'publish'
+    publishRegistry: 'useFeed'
+    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/71bca7ae-7da7-4a94-bcbe-e78837bbf274'
 
 - script: 
     ls -la /home/einfochips/mypipe/_work/10/s/* .
