@@ -36,10 +36,9 @@ steps:
     StoreAsTar: true
 - task: Npm@1
   inputs:
-    command: 'install'
-    workingDir: '/home/einfochips/mypipe/_work/10/s/'
-    customRegistry: 'useFeed'
-    customFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/71bca7ae-7da7-4a94-bcbe-e78837bbf274'
+    command: 'publish'
+    publishRegistry: 'useFeed'
+    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/b8034dc1-9ef8-4989-9318-a76be9ab0e14'
 
 # - script: 
 #     ls -la /home/einfochips/mypipe/_work/10/s/* .
