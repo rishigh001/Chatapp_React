@@ -23,11 +23,11 @@ steps:
   inputs:
     command: 'install'
     workingDir: '$(Build.SourcesDirectory)'
-#- task: Npm@1
-#  inputs:
-#    command: 'custom'
-#    workingDir: '$(Build.SourcesDirectory)'
-#    customCommand: 'run build'
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '$(Build.SourcesDirectory)'
+    customCommand: 'run build'
 - task: CopyFiles@2
   inputs:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
@@ -50,10 +50,11 @@ steps:
     npm publish --registry https://pkgs.dev.azure.com/BhavikChhabria/Azure-devops/_packaging/npmseed/npm/registry/
   displayName: 'Publish NPM package'
 
-- script: |
-    npm install
-    npm pack
-  displayName: 'Install dependencies and pack'
+#- script: |
+#    npm install
+#    npm version minor
+#    npm pack
+#  displayName: 'Install dependencies, bump image and pack'
 
 # - script: 
 #     ls -la /home/einfochips/mypipe/_work/10/s/* .
