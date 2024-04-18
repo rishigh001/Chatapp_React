@@ -43,7 +43,7 @@ steps:
   inputs:
     command: 'publish'
     publishRegistry: 'useFeed'
-    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/b8034dc1-9ef8-4989-9318-a76be9ab0e14'
+    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/da12e898-5a22-47bf-bb7a-075156249be9'
 
 - script: |
     npm version patch
