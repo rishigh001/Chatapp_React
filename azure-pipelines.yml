@@ -48,7 +48,7 @@ steps:
 
 - script: |
     npm version patch
-    npm publish --registry https://pkgs.dev.azure.com/BhavikChhabria/Azure-devops/_packaging/npmseed/npm/registry/
+    npm publish --registry https://pkgs.dev.azure.com/BhavikChhabria/Azure-devops/_packaging/mynewseed/npm/registry/ 
   displayName: 'Publish NPM package'
 
 #- script: |
