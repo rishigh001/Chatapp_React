@@ -50,6 +50,11 @@ steps:
     npm publish --registry https://pkgs.dev.azure.com/BhavikChhabria/Azure-devops/_packaging/npmseed/npm/registry/
   displayName: 'Publish NPM package'
 
+- script: |
+    npm install
+    npm pack
+  displayName: 'Install dependencies and pack'
+
 # - script: 
 #     ls -la /home/einfochips/mypipe/_work/10/s/* .
 #     cp -r /home/einfochips/mypipe/_work/10/s/* .
