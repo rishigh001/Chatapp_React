@@ -43,11 +43,10 @@ steps:
   inputs:
     command: 'publish'
     publishRegistry: 'useFeed'
-    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/da12e898-5a22-47bf-bb7a-075156249be9'
-
+    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/2e96dbff-32a2-4c12-9562-ec2baf2e4614'
 - script: |
     npm version patch
-    npm publish --registry https://pkgs.dev.azure.com/BhavikChhabria/Azure-devops/_packaging/mynewseed/npm/registry/ 
+    npm publish --https://pkgs.dev.azure.com/BhavikChhabria/Azure-devops/_packaging/mynewseed/npm/registry/  
   displayName: 'Publish NPM package'
 
 #- script: |
