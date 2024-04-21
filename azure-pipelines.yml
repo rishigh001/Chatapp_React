@@ -50,7 +50,7 @@ steps:
   inputs:
     command: 'publish'
     publishRegistry: 'useFeed'
-    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/5c5dc333-6fe9-4232-8fe7-2a49cf894950'
+    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/afc81b91-6084-4b72-9085-fe1ff247fe5c'
 
 - script: |  
     npm pack
