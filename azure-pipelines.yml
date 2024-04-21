@@ -11,7 +11,8 @@ trigger:
     exclude:
       - azurepipe
 
-pool: default
+pool: 
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: NodeTool@0
@@ -28,9 +29,15 @@ steps:
     command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
     customCommand: 'run build'
-- task: CopyFiles@2
+#- task: CopyFiles@2
+#  inputs:
+#    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: Npm@1
   inputs:
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    command: custom
+    customCommand: 'install -g npm@latest'
+  displayName: 'upgrade npm to latest version'
     
 - task: PublishBuildArtifacts@1
   inputs:
@@ -44,6 +51,10 @@ steps:
     command: 'publish'
     publishRegistry: 'useFeed'
     publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/5c5dc333-6fe9-4232-8fe7-2a49cf894950'
+
+- script: |  
+    npm pack
+  displayName: 'package for npm release'
 #- script: |
 #    npm version patch
 #    npm publish --https://pkgs.dev.azure.com/BhavikChhabria/Azure-devops/_packaging/mynewseed/npm/registry/  
