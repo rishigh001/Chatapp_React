@@ -32,11 +32,11 @@ steps:
 #  inputs:
 #    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- task: Npm@1
-  inputs:
-    command: custom
-    customCommand: 'install -g npm@latest'
-  displayName: 'upgrade npm to latest version'
+#- task: Npm@1
+#  inputs:
+#    command: custom
+#    customCommand: 'install -g npm@latest'
+#  displayName: 'upgrade npm to latest version'
     
 - task: PublishBuildArtifacts@1
   inputs:
@@ -48,9 +48,8 @@ steps:
 - task: Npm@1
   inputs:
     command: 'publish'
-    workingDir: '/home/einfochips/mypipe/_work/10/s/build'
     publishRegistry: 'useFeed'
-    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/b506df5d-71b7-47a8-8317-4d0eaffa493a'
+    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/bc735e48-e286-494a-a5c0-dd2b7ad12362'
 
 - script: |  
     npm pack
