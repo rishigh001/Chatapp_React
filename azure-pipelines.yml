@@ -22,7 +22,8 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: '$(Build.SourcesDirectory)'
+    customRegistry: 'useFeed'
+    customFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/bc735e48-e286-494a-a5c0-dd2b7ad12362'
 - task: Npm@1
   inputs:
     command: 'custom'
