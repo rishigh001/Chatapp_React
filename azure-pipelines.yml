@@ -11,8 +11,7 @@ trigger:
     exclude:
       - azurepipe
 
-pool: 
-  vmImage: ubuntu-latest
+pool: Default
 
 steps:
 - task: NodeTool@0
