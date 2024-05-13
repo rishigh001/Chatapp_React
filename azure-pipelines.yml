@@ -11,7 +11,7 @@ trigger:
     exclude:
       - azurepipe
 
-pool: Default
+pool: nodepipe
 
 steps:
 - task: NodeTool@0
