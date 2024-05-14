@@ -31,7 +31,6 @@ steps:
 - task: Npm@1
   inputs:
     command: 'publish'
-    workingDir: '/home/einfochips/nodepipe/_work/2/s/.npmrc'
     publishRegistry: 'useFeed'
-    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/f7c70e8e-1369-496a-93ec-5e76368e0aaa'
+    publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/7cd57fde-2996-41bf-8652-976ff67ff8a0'
   displayName: Publish
