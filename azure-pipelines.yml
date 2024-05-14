@@ -6,8 +6,7 @@
 trigger:
 - main
 
-pool:
-  vmImage: nodepipe
+pool: nodepipe
 
 steps:
 - task: NodeTool@0
