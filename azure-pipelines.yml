@@ -1,10 +1,10 @@
 trigger:
   tags:
     include:
-      - '*'
+      - .*
   branches:
     exclude:
-      - abcd
+      - main
  
 pool: Default
  
