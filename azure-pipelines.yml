@@ -9,28 +9,27 @@ trigger:
       - '*'
   branches:
     exclude:
-      - master
+      - azure-pipe
  
 pool: nodepipe
- 
+
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
- 
-- task: Npm@1
-  inputs:
-    command: 'install'
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    customCommand: 'build'
-  displayName: Build
+
+- script: |
+    npm install
+  displayName: 'Install Dependencies'
+
+- script: |
+    npm run build
+  displayName: 'Build'
 
 - task: Npm@1
   inputs:
     command: 'publish'
     publishRegistry: 'useFeed'
     publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/7cd57fde-2996-41bf-8652-976ff67ff8a0'
-  displayName: Publish
+  displayName: 'Publish Package'
