@@ -22,6 +22,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
+    workingDir: '/home/einfochips/nodepipe/_work/2/s'
 - task: Npm@1
   inputs:
     command: 'custom'
