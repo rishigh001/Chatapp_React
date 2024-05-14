@@ -14,6 +14,10 @@ trigger:
 pool: nodepipe
 
 steps:
+- script: |
+    export PATH=$PATH:/home/einfochips/nodepipe/_work/_tool/node/10.24.1/x64/bin
+  displayName: 'Add Node.js Binary Path'
+
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
@@ -37,3 +41,4 @@ steps:
     publishRegistry: 'useFeed'
     publishFeed: '974bcf44-2fa8-4468-943e-10a4c93d77e1/7cd57fde-2996-41bf-8652-976ff67ff8a0'
   displayName: 'Publish Package'
+
