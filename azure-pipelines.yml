@@ -5,6 +5,7 @@ trigger:
   branches:
     exclude:
       - main
+      - abcd
  
 pool: Default
  
